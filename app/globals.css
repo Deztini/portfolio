@@ -126,7 +126,7 @@ p {
 }
 
 @utility section-space {
-  padding-block: clamp(5rem, 10vw, 9rem);
+  padding-block: clamp(3rem, 10vw, 5rem);
 }
 
 @utility meta {

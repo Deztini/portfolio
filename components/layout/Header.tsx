@@ -29,7 +29,7 @@ export function Header() {
     <header
       className={`sticky top-0 z-40 border-b  bg-bg ${scrolled ? "border-border" : "border-transparent"}`}
     >
-      <div className="h-18 px-10  flex items-center justify-between">
+      <div className="h-18 px-15  flex items-center justify-between">
         <Link href="/" className="font-medium tracking-tight">
           {site.name}
         </Link>
