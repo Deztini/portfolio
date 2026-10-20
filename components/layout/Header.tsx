@@ -27,7 +27,7 @@ export function Header() {
   }, []);
   return (
     <header
-      className={`sticky top-0 z-40 border-b  bg-bg ${scrolled ? "border-border" : "border-transparent"}`}
+      className={`sticky top-0 z-40 border-b  ${scrolled ? "border-border bg-bg/70 backdrop-blur-md" : "border-transparent bg-bg"}`}
     >
       <div className="h-18 px-15  flex items-center justify-between">
         <Link href="/" className="font-medium tracking-tight">
