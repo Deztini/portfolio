@@ -23,7 +23,7 @@ export function Hero() {
       <div className="mt-20">
         <div className="border-b border-gray-400" />
 
-        <div className="flex items-center gap-40 mt-6">
+        <div className="flex items-center gap-37 mt-6">
           {site.stack.map((st) => (
             <div key={st} className="text-meta text-muted">
               {st}
