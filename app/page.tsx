@@ -1,4 +1,5 @@
 import { About } from "@/components/sections/About";
+import { Contact } from "@/components/sections/Contact";
 import { Hero } from "@/components/sections/Hero";
 import { SelectedWork } from "@/components/sections/Selectedwork";
 import { Stack } from "@/components/sections/Stack";
@@ -6,11 +7,12 @@ import { Stack } from "@/components/sections/Stack";
 
 export default function Home() {
   return (
-    <main className="px-15">
+    <main>
       <Hero />
       <SelectedWork />
       <About />
       <Stack />
+      <Contact />
     </main>
   );
 }

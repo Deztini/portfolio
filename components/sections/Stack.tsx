@@ -17,7 +17,7 @@ export function Stack() {
     },
   ];
   return (
-    <section className="section-space">
+    <section className="section-space px-15">
       <div className="flex items-start gap-60">
         <div className="text-muted text-small mt-2">03 / STACK</div>
 

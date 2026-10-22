@@ -1,6 +1,6 @@
 export function About() {
   return (
-    <section id="about">
+    <section id="about" className="px-15">
       <div className="flex items-start gap-50">
         <div className="text-muted text-small mt-2">02 / ABOUT</div>
         <div className="max-w-230"> 

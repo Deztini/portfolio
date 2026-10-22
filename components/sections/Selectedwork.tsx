@@ -8,7 +8,7 @@ const frames = {
 
 export function SelectedWork() {
   return (
-    <section id="work" className="section-space">
+    <section id="work" className="section-space px-15">
       <div className="flex gap-50">
         <div className="text-muted text-small mt-2">01 / SELECTED WORK</div>
         <div className="flex flex-col gap-8">
