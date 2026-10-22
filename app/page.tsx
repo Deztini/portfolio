@@ -1,6 +1,7 @@
 import { About } from "@/components/sections/About";
 import { Hero } from "@/components/sections/Hero";
 import { SelectedWork } from "@/components/sections/Selectedwork";
+import { Stack } from "@/components/sections/Stack";
 
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <Hero />
       <SelectedWork />
       <About />
+      <Stack />
     </main>
   );
 }
