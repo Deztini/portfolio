@@ -1,8 +1,7 @@
 import { site } from "@/content/site";
-import { ArrowUpRight, MoveUpRight } from "lucide-react";
-import { InputField } from "../ui/InputField";
-import { Button } from "../ui/Button";
+import { MoveUpRight } from "lucide-react";
 import Link from "next/link";
+import { ContactForm } from "../form/ContactForm";
 
 export function Contact() {
   return (
@@ -47,28 +46,7 @@ export function Contact() {
           </div>
         </div>
 
-        <form>
-          <div className="container-site flex flex-col gap-13">
-            <InputField label="Name" id="name" />
-            <InputField label="Email" id="email" type="email" />
-            <InputField label="Message" id="message" />
-
-            <Button
-              type="submit"
-              variant="secondary"
-              className="group relative w-full justify-between overflow-hidden border-gray-400"
-            >
-              <span
-                aria-hidden
-                className="absolute inset-0 origin-right scale-x-0 bg-accent transition-transform duration-700 ease-out-expo group-hover:origin-left group-hover:scale-x-100"
-              />
-              <span className="relative transition-colors duration-500 text-bg group-hover:text-accent-contrast">
-                Send message
-              </span>
-              <ArrowUpRight className="relative transition-colors text-bg duration-500 group-hover:text-accent-contrast" />
-            </Button>
-          </div>
-        </form>
+        <ContactForm />
       </div>
 
       <div className="border-b border-gray-400 mt-45 mb-2" />
@@ -93,7 +71,6 @@ export function Contact() {
           <Link
             href={`mailto:${site.email}`}
             className="link-underline text-muted text-meta font-mono"
-           
           >
             Email
           </Link>
