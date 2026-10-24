@@ -1,11 +1,14 @@
 import { site } from "@/content/site";
-import { MoveUpRight } from "lucide-react";
+import { ArrowUpRight, MoveUpRight } from "lucide-react";
+import { InputField } from "../ui/InputField";
+import { Button } from "../ui/Button";
+import Link from "next/link";
 
 export function Contact() {
   return (
     <section
       id="contact"
-      className="bg-text section-space h-150 rounded-xs w-full px-15"
+      className="theme-dark bg-text text-text section-space rounded-xs w-full px-15"
     >
       <p className="text-small text-muted mb-7">05 / CONTACT</p>
 
@@ -37,7 +40,57 @@ export function Contact() {
           </div>
         </div>
 
-        <div></div>
+        <form>
+          <div className="container-site flex flex-col gap-13">
+            <InputField label="Name" id="name" />
+            <InputField label="Email" id="email" type="email" />
+            <InputField label="Message" id="message" />
+
+            <Button
+              type="submit"
+              variant="secondary"
+              className="group relative w-full justify-between overflow-hidden border-gray-400"
+            >
+              <span
+                aria-hidden
+                className="absolute inset-0 origin-right scale-x-0 bg-accent transition-transform duration-700 ease-out-expo group-hover:origin-left group-hover:scale-x-100"
+              />
+              <span className="relative transition-colors duration-500 text-bg group-hover:text-accent-contrast">
+                Send message
+              </span>
+              <ArrowUpRight className="relative transition-colors text-bg duration-500 group-hover:text-accent-contrast" />
+            </Button>
+          </div>
+        </form>
+      </div>
+
+      <div className="border-b border-gray-400 mt-45 mb-2" />
+
+      <div className="flex items-center gap-120 mt-6 mb-10">
+        <div className="font-mono text-muted text-meta">{`© ${new Date().getFullYear()} ${site.name}`}</div>
+        <div className="flex items-center gap-5">
+          <Link
+            href={site.github}
+            className="link-underline text-muted text-meta font-mono"
+            target="_blank"
+          >
+            Github
+          </Link>
+          <Link
+            href={site.linkedin}
+            className="link-underline text-muted text-meta font-mono"
+            target="_blank"
+          >
+            Linkedin
+          </Link>
+          <Link
+            href={site.github}
+            className="link-underline text-muted text-meta font-mono"
+            target="_blank"
+          >
+            Email
+          </Link>
+        </div>
       </div>
     </section>
   );

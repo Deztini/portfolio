@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ComponentProps } from "react";
+import { twMerge } from "tailwind-merge";
 
 type ButtonProps = {
   variant?: "primary" | "secondary" | "outline";
@@ -24,7 +25,7 @@ export function buttonStyles({
   size = "md",
   className = "",
 }: ButtonProps & { className?: string }) {
-  return `${base} ${variants[variant]} ${sizes[size]} ${className}`;
+    return twMerge(base, variants[variant], sizes[size], className);
 }
 
 export function Button({
