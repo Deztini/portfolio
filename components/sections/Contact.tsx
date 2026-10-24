@@ -22,20 +22,27 @@ export function Contact() {
 
           <div className="mt-15">
             <div className="border-b border-gray-400 my-4" />
-            <div className="grid grid-cols-[90px_580px_1fr] items-center">
+            <a
+              href={`mailto:${site.email}`}
+              className="grid grid-cols-[90px_580px_1fr] items-center"
+            >
               <p className="text-muted text-[13px]">EMAIL</p>
               <p className="text-small text-bg">{site.email}</p>
 
               <MoveUpRight className="text-bg" size={11} />
-            </div>
+            </a>
             <div className="border-b border-gray-400 my-4" />
 
-            <div className="grid grid-cols-[90px_580px_1fr] items-center">
+            <a
+              href={site.whatsapp}
+              target="_blank"
+              className="grid grid-cols-[90px_580px_1fr] items-center"
+            >
               <p className="text-muted text-[13px]">PHONE</p>
               <p className="text-small text-bg">Message on Whatsapp</p>
 
               <MoveUpRight className="text-bg" size={11} />
-            </div>
+            </a>
             <div className="border-b border-gray-400 my-4" />
           </div>
         </div>
@@ -84,9 +91,9 @@ export function Contact() {
             Linkedin
           </Link>
           <Link
-            href={site.github}
+            href={`mailto:${site.email}`}
             className="link-underline text-muted text-meta font-mono"
-            target="_blank"
+           
           >
             Email
           </Link>
