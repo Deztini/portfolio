@@ -3,6 +3,7 @@
 import { site } from "@/content/site";
 import { useState, useEffect, useSyncExternalStore } from "react";
 import Link from "next/link";
+import { ThemeToggle } from "../ui/ThemeToggle";
 
 export function Header() {
   const [time, setTime] = useState(new Date());
@@ -49,7 +50,9 @@ export function Header() {
           </a>
         </nav>
 
-        <div className="flex items-center gap-3 mr-10">
+        <div className="flex items-center gap-10 mr-6">
+
+        <div className="flex items-center gap-3">
           <div className="rounded-full h-2 w-2 bg-green-700" />
           <div>
             <p className=" text-small">
@@ -61,6 +64,11 @@ export function Header() {
             </p>
             <p className="text-small text-muted">Available</p>
           </div>
+        </div>
+        
+        <div>
+          <ThemeToggle />
+        </div>
         </div>
       </div>
     </header>

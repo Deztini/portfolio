@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { ComponentProps } from "react";
-import { twMerge } from "tailwind-merge";
+import { extendTailwindMerge } from "tailwind-merge";
+
+const twMerge = extendTailwindMerge({
+  extend: {
+    theme: {
+      text: ["display", "h1", "h2", "body", "small", "meta"],
+    },
+  },
+});
 
 type ButtonProps = {
   variant?: "primary" | "secondary" | "outline";

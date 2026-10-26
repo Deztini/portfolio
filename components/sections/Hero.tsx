@@ -10,7 +10,7 @@ export function Hero() {
       <p className="text-muted max-w-3xl text-2xl">{site.intro}</p>
 
       <div className="flex gap-6">
-        <ButtonLink href="#work">
+        <ButtonLink variant="primary" href="#work">
           <span>View work</span>
           <ArrowUpRight />
         </ButtonLink>
