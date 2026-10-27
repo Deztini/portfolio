@@ -1,8 +1,14 @@
+"use client";
+
 import { site } from "@/content/site";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { Button, ButtonLink } from "../ui/Button";
+import { useState } from "react";
+import { ResumeModal } from "../modal/ResumeModal";
 
 export function Hero() {
+  const [resumeOpen, setResumeOpen] = useState(false);
+
   return (
     <section className="section-space flex flex-col gap-10 px-15">
       <p className="meta">{site.title}</p>
@@ -14,7 +20,7 @@ export function Hero() {
           <span>View work</span>
           <ArrowUpRight />
         </ButtonLink>
-        <Button variant="secondary">
+        <Button variant="secondary" onClick={() => setResumeOpen(true)}>
           <span>View resume</span>
           <ArrowRight />
         </Button>
@@ -31,6 +37,9 @@ export function Hero() {
           ))}
         </div>
       </div>
+
+
+      <ResumeModal open={resumeOpen} onClose={() => setResumeOpen(false)} />
     </section>
   );
 }
