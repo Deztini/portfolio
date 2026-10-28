@@ -33,7 +33,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit}>
-      <div className="container-site flex flex-col gap-13">
+      <div className="flex flex-col gap-13 lg:container-site">
         <InputField label="Name" id="name" name="name" required />
         <InputField
           label="Email"

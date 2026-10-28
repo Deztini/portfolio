@@ -1,7 +1,7 @@
 export function About() {
   return (
-    <section id="about" className="px-15">
-      <div className="flex items-start gap-50">
+    <section id="about" className="px-5 md:px-15">
+      <div className="flex flex-col gap-10 lg:flex-row items-start lg:gap-50">
         <div className="text-muted text-small mt-2">02 / ABOUT</div>
         <div className="max-w-230"> 
           <h1 className="text-display text-wrap">
