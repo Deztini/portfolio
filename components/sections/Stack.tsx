@@ -1,3 +1,7 @@
+import { Line } from "../ui/Line";
+import { TextReveal } from "../ui/TextReveal";
+import { Reveal } from "../ui/Reveal";
+
 export function Stack() {
   const stack = [
     {
@@ -19,11 +23,11 @@ export function Stack() {
   return (
     <section className="section-space px-5 md:px-15">
       <div className="flex flex-col gap-10 lg:flex-row items-start lg:gap-60">
-        <div className="text-muted text-small mt-2">03 / STACK</div>
+        <Reveal><div className="text-muted text-small mt-2">03 / STACK</div></Reveal>
 
         <div className="w-full max-w-200">
-          <h1 className="text-display">Tools I use to ship.</h1>
-          <div className="border-b border-gray-400 mt-20 mb-18" />
+          <TextReveal text="Tools I use to ship." className="text-display" />
+          <Line className="mt-20 mb-18" />
 
           <div>
             {stack.map((st) => (
@@ -35,7 +39,7 @@ export function Stack() {
                   <p className="text-meta text-muted text-small">{st.tools}</p>
                 </div>
 
-                <div className="border-b border-gray-400 my-20" />
+                <Line className="my-20" />
               </div>
             ))}
           </div>

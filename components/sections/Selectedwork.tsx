@@ -1,5 +1,9 @@
 import { projects } from "@/content/project";
 import Image from "next/image";
+import { TextReveal } from "../ui/TextReveal";
+import { Reveal } from "../ui/Reveal";
+import { Parallax } from "../ui/Parallax";
+import { Line } from "../ui/Line";
 
 const frames = {
   mobile: "w-44 sm:w-60 lg:w-72 aspect-[9/16]",
@@ -10,31 +14,46 @@ export function SelectedWork() {
   return (
     <section id="work" className="section-space px-5 md:px-15">
       <div className="flex flex-col gap-4 lg:flex-row lg:gap-50">
-        <div className="text-muted text-small mt-2">01 / SELECTED WORK</div>
+        <Reveal>
+          <div className="text-muted text-small mt-2">01 / SELECTED WORK</div>
+        </Reveal>
         <div className="flex flex-col gap-8">
-          <h1 className="text-display">Work that has to work.</h1>
-          <p className="text-muted max-w-2xl text-xl">
-            Three systems across product, machine learning and infrastructure
-            each built for use beyond a demo.
-          </p>
+          <TextReveal text="Work that has to work." className="text-display" />
+          <Reveal>
+            {" "}
+            <p className="text-muted max-w-2xl text-xl">
+              Three systems across product, machine learning and infrastructure
+              each built for use beyond a demo.
+            </p>
+          </Reveal>
         </div>
       </div>
 
-      <div className="border-b border-gray-400 my-25" />
+      <Line className="my-25" />
 
       <div>
         {projects.map((proj) => (
           <div key={proj.name}>
             <div className="flex items-center justify-between">
-              <p className="text-muted text-small">{proj.id} / CASE STUDY</p>
-              <p className="text-muted text-small">{proj.category}</p>
+              <Reveal>
+                {" "}
+                <p className="text-muted text-small">
+                  {proj.id} / CASE STUDY
+                </p>{" "}
+              </Reveal>
+              <Reveal>
+                {" "}
+                <p className="text-muted text-small">{proj.category}</p>{" "}
+              </Reveal>
             </div>
 
             <div className="my-20 flex flex-col items-center">
-              <h1 className="text-display mb-3">{proj.name}</h1>
-              <p className="text-muted max-w-120 text-xl text-center">
-                {proj.summary}
-              </p>
+              <TextReveal text={proj.name} className="text-display mb-3" />
+              <Reveal>
+                <p className="text-muted max-w-120 text-xl text-center">
+                  {proj.summary}
+                </p>
+              </Reveal>
             </div>
 
             <div
@@ -43,7 +62,11 @@ export function SelectedWork() {
               }`}
             >
               {[proj.firstImage, proj.secondImage].map((src, i) => (
-                <div key={i} className={`relative ${frames[proj.type]}`}>
+                <Parallax
+                  key={i}
+                  offset={i === 0 ? 14 : 32}
+                  className={`relative ${frames[proj.type]}`}
+                >
                   <Image
                     src={src}
                     alt={`${proj.name} screen ${i + 1}`}
@@ -51,36 +74,36 @@ export function SelectedWork() {
                     sizes="(min-width: 1024px) 28rem, 50vw"
                     className="object-contain"
                   />
-                </div>
+                </Parallax>
               ))}
             </div>
 
             <div className="mt-6 max-w-4xl ml-auto grid grid-cols-2 gap-y-8 gap-x-18">
               <div>
-                <div className="border-b border-gray-400 mb-3" />
+                <Line className="mb-3" />
                 <p className="text-meta mb-3">PROBLEM</p>
                 <p className="text-muted text-small">{proj.problem}</p>
               </div>
               <div>
-                <div className="border-b border-gray-400 mb-3" />
+                <Line className="mb-3" />
                 <p className="text-meta mb-3">WHAT I BUILT</p>
                 <p className="text-muted text-small">{proj.built}</p>
               </div>
 
               <div>
-                <div className="border-b border-gray-400 mb-3" />
+                <Line className="mb-3" />
                 <p className="text-meta mb-3">DECISIONS I MADE</p>
                 <p className="text-muted text-small">{proj.decision}</p>
               </div>
 
               <div className="col-span-2">
-                <div className="border-b border-gray-400 mb-3" />
+                <Line className="mb-3" />
                 <p className="text-meta mb-3">RESULT</p>
                 <p className="text-[22px]">{proj.result}</p>
               </div>
 
               <div>
-                <div className="border-b border-gray-400 mb-3" />
+                <Line className="mb-3" />
                 <p className="text-meta mb-3">STACK</p>
                 <div className="flex flex-wrap gap-x-3 gap-y-1">
                   {proj.stack.map((st) => (
@@ -91,13 +114,13 @@ export function SelectedWork() {
                 </div>
               </div>
               <div>
-                <div className="border-b border-gray-400 mb-3" />
+                <Line className="mb-3" />
                 <p className="text-meta mb-3">WHAT I’D DO DIFFERENTLY</p>
                 <p className="text-muted text-small">{proj.differently}</p>
               </div>
             </div>
 
-            <div className="border-b border-gray-400 mt-40 mb-18" />
+            <Line className="mt-40 mb-18" />
           </div>
         ))}
       </div>
