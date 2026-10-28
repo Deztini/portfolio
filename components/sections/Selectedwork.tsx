@@ -5,7 +5,7 @@ import { Reveal } from "../ui/Reveal";
 import { Parallax } from "../ui/Parallax";
 import { Line } from "../ui/Line";
 
-const frames = {
+const frames: Record<string, string> = {
   mobile: "w-44 sm:w-60 lg:w-72 aspect-[9/16]",
   web: "w-full aspect-[16/10] md:w-[45%] lg:w-[40rem]",
 };
