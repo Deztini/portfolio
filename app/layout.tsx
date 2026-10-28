@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     title: "Agbator Destiny | Software Engineer",
     description: "Software engineer that builds great mobile and web apps",
   },
+  alternates: { canonical: "/" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
