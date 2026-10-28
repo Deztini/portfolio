@@ -15,8 +15,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Agbator Destiny",
+  metadataBase: new URL("https://agbatordestiny.com"),
+  title: {
+    default: "Agbator Destiny | Software Engineer",
+    template: "%s | Agbator Destiny",
+  },
   description: "Software engineer that builds great mobile and web apps",
+  authors: [{ name: "Agbator Destiny" }],
+  openGraph: {
+    title: "Agbator Destiny | Software Engineer",
+    description: "Software engineer that builds great mobile and web apps",
+    url: "https://agbatordestiny.com",
+    siteName: "Agbator Destiny",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Agbator Destiny | Software Engineer",
+    description: "Software engineer that builds great mobile and web apps",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -26,10 +43,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <Providers>
-        <Header />
-        <body className="min-h-full flex flex-col">{children}</body>
-      </Providers>
+      <body className="min-h-full flex flex-col">
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }
