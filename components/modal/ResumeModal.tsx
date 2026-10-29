@@ -6,7 +6,7 @@ import { ButtonLink } from "../ui/Button";
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
-
+import { ease } from "@/lib/motion";
 
 const ResumeViewer = dynamic(() => import("../ui/ResumeViewer"), {
   ssr: false,
@@ -32,11 +32,15 @@ export function ResumeModal({
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-50 bg-bg/60"
-        initial={{ clipPath: "inset(0 0 100% 0)" }}
-        animate={{ clipPath: "inset(0 0 0% 0)" }}
-        exit={{ clipPath: "inset(0 0 100% 0)" }}
-        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className="fixed inset-0 z-50 bg-bg/60 origin-right"
+        // initial={{ clipPath: "inset(0 0 100% 0)" }}
+        // animate={{ clipPath: "inset(0 0 0% 0)" }}
+        // exit={{ clipPath: "inset(0 0 100% 0)" }}
+        // transition={{ duration: 0.4, ease: "easeInOut" }}
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease }}
         onClick={onClose}
       >
         <div

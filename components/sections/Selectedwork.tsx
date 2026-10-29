@@ -22,8 +22,7 @@ export function SelectedWork() {
           <Reveal>
             {" "}
             <p className="text-muted max-w-2xl text-xl">
-              Three systems across product, machine learning and infrastructure
-              each built for use beyond a demo.
+              Two systems built for real use, not just a demo.
             </p>
           </Reveal>
         </div>
